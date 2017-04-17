@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalendarSolution"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="550" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,6 +18,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="30pt"/>
         </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Date,StringFormat=dd/mm/yyyy }" FontSize="15pt"></TextBlock>
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Top">
+            <Button Height="75pt" Command="{Binding Path=NextButtonClick}" Content="Nastepny Dzień" FontSize="10pt"></Button>
+            <Button Height="75pt" Command="{Binding Path=NextButtonClick}" Content="Poprzedni Dzień" FontSize="10pt"></Button>
+        </StackPanel>
+        <Calendar Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" SelectedDate="{Binding Path=Date}" SelectionMode="SingleDate"/>
+        
     </Grid>
-    
 </Window>
