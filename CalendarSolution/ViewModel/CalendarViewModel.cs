@@ -14,6 +14,9 @@ namespace CalendarSolution.ViewModel
         public CalendarViewModel()
         {
             Date = DateTime.Now;
+            //Model.Note newNote = new Model.Note() { Id = 1, Date = DateTime.Now, Content = "lala" };
+            //Controllers.NoteController.AddToNote(newNote);
+            //var allNotes = SQLData.SQLDataContext.Notes.ToList();
         }
         #endregion
 
