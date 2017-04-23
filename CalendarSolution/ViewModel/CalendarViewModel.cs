@@ -8,9 +8,12 @@ using System.Windows.Input;
 
 namespace CalendarSolution.ViewModel 
 {
-    class CalendarViewModel : INotifyPropertyChanged
+    public class CalendarViewModel : INotifyPropertyChanged
     {
-        
+        public CalendarViewModel()
+        {
+            Date = DateTime.Now;
+        }
         private ICommand nextButtonCommand;
         private DateTime _date;
 
