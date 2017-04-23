@@ -10,26 +10,20 @@ namespace CalendarSolution.ViewModel
 {
     public class CalendarViewModel : INotifyPropertyChanged
     {
+        #region Constructor
         public CalendarViewModel()
         {
             Date = DateTime.Now;
         }
+        #endregion
+
+        #region Fields
         private ICommand nextButtonCommand;
-        private DateTime _date;
-
-        private void NextButton()
-        { Date = Date.AddDays(1); }
-        
-        public ICommand NextButtonCommand
-        {
-            get
-            { nextButtonCommand = new RelayCommand<object>((x) => NextButton());
-            return nextButtonCommand; }
-            }
-
         public event PropertyChangedEventHandler PropertyChanged;
+        private DateTime _date;
+        #endregion
 
-        #region Methods
+        #region Properties
         public DateTime Date //Publiczna właściwość Date dla _date
         {
             get { return _date; }
@@ -42,6 +36,13 @@ namespace CalendarSolution.ViewModel
                 }
             }
         }
+        #endregion
+
+        #region Methods
+        private void NextButton()
+        {
+            Date = Date.AddDays(1);
+        }
 
         protected void OnPropertyChanged(string Label)
         {
@@ -52,5 +53,19 @@ namespace CalendarSolution.ViewModel
             }
         }
         #endregion
+
+        #region Commands
+
+        public ICommand NextButtonCommand
+        {
+            get
+            {
+            nextButtonCommand = new RelayCommand<object>((x) => NextButton());
+            return nextButtonCommand;
+            }
+        }
+
+        #endregion
+
     }
 }
