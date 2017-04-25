@@ -8,28 +8,25 @@ using System.Windows.Input;
 
 namespace CalendarSolution.ViewModel 
 {
-    class CalendarViewModel : INotifyPropertyChanged
+    public class CalendarViewModel : INotifyPropertyChanged
     {
-        private DateTime _date;
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        private ICommand nextButtonCommand;
-        
-
-        private void NextButton()
-        { Date = Date.AddDays(1); }
-        
-        public ICommand NextButtonCommand
+        #region Constructor
+        public CalendarViewModel()
         {
-            get
-            { nextButtonCommand = new RelayCommand<object>((x) => NextButton());
-            return nextButtonCommand; }
-            }
+            Date = DateTime.Now;
+            //Model.Note newNote = new Model.Note() { Id = 1, Date = DateTime.Now, Content = "lala" };
+            //Controllers.NoteController.AddToNote(newNote);
+            //var allNotes = SQLData.SQLDataContext.Notes.ToList();
+        }
+        #endregion
 
-        
+        #region Fields
+        private ICommand nextButtonCommand;
+        public event PropertyChangedEventHandler PropertyChanged;
+        private DateTime _date;
+        #endregion
 
-        #region Methods
+        #region Properties
         public DateTime Date //Publiczna właściwość Date dla _date
         {
             get { return _date; }
@@ -42,6 +39,13 @@ namespace CalendarSolution.ViewModel
                 }
             }
         }
+        #endregion
+
+        #region Methods
+        private void NextButton()
+        {
+            Date = Date.AddDays(1);
+        }
 
         protected void OnPropertyChanged(string Label)
         {
@@ -52,5 +56,19 @@ namespace CalendarSolution.ViewModel
             }
         }
         #endregion
+
+        #region Commands
+
+        public ICommand NextButtonCommand
+        {
+            get
+            {
+            nextButtonCommand = new RelayCommand<object>((x) => NextButton());
+            return nextButtonCommand;
+            }
+        }
+
+        #endregion
+
     }
 }
