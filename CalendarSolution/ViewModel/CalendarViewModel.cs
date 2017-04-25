@@ -10,9 +10,12 @@ namespace CalendarSolution.ViewModel
 {
     class CalendarViewModel : INotifyPropertyChanged
     {
-        
-        private ICommand nextButtonCommand;
         private DateTime _date;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        private ICommand nextButtonCommand;
+        
 
         private void NextButton()
         { Date = Date.AddDays(1); }
@@ -24,7 +27,7 @@ namespace CalendarSolution.ViewModel
             return nextButtonCommand; }
             }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         #region Methods
         public DateTime Date //Publiczna właściwość Date dla _date
