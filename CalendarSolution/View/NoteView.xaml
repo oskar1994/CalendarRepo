@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalendarSolution.View"
+        xmlns:vm="clr-namespace:CalendarSolution.ViewModel"
         mc:Ignorable="d"
         Title="NoteView" Height="300" Width="300">
+    <Window.DataContext>
+        <vm:NoteViewModel/>
+    </Window.DataContext>
     <Grid>
         
     </Grid>
