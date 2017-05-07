@@ -73,6 +73,7 @@
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="SQLData\SQLDataContext.cs" />
     <Compile Include="ViewModel\CalendarViewModel.cs" />
+    <Compile Include="ViewModel\NoteViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
