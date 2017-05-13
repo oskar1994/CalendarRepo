@@ -52,6 +52,11 @@ namespace CalendarSolution.ViewModel
             Date = Date.AddDays(-1);
         }
 
+        private void OKButton()
+        {
+            throw new NotImplementedException();
+        }
+
         protected void OnPropertyChanged(string Label)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
