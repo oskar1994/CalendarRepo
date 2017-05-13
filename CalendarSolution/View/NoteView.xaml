@@ -6,11 +6,21 @@
         xmlns:local="clr-namespace:CalendarSolution.View"
         xmlns:vm="clr-namespace:CalendarSolution.ViewModel"
         mc:Ignorable="d"
-        Title="NoteView" Height="300" Width="300">
+        Title="NoteView" Height="550" Width="400">
     <Window.DataContext>
         <vm:NoteViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
         
+        
+        <StackPanel Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" >
+            
+        </StackPanel>
     </Grid>
 </Window>
