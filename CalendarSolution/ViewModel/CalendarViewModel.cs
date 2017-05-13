@@ -57,6 +57,11 @@ namespace CalendarSolution.ViewModel
             throw new NotImplementedException();
         }
 
+        private void CancelButton()
+        {
+            throw new NotImplementedException();
+        }
+
         protected void OnPropertyChanged(string Label)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
