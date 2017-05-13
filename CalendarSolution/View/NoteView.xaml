@@ -19,9 +19,9 @@
         </Grid.RowDefinitions>
         
         <Grid Grid.Row="0">
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Nazwa notatki" FontSize="10" VerticalAlignment="Top" />
-            <TextBox x:Name="Nazwa_notki_textBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" 
-                 Text="Nowa Notatka" VerticalAlignment="Bottom" Width="Auto" Height="20"/>
+            <TextBlock x:Name="NoteNametextBlock" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Nazwa notatki" FontSize="10" VerticalAlignment="Top" />
+            <TextBox x:Name="NoteNametextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" 
+                 Text="{Binding Path=NoteName}" VerticalAlignment="Bottom" Width="Auto" Height="20"/>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -29,10 +29,11 @@
         </Grid>
         
         <Grid Grid.Row="2">
-            <TextBlock x:Name="ContentNotatkiTextBlock" Text="Treść notatki"/>
-            <TextBox x:Name="ContentNotatkiTextBox" HorizontalAlignment="Stretch"  TextWrapping="Wrap"
+            <TextBlock x:Name="NoteContentTextBlock" Text="Treść notatki"/>
+            <TextBox x:Name="NoteContentTextBox" HorizontalAlignment="Stretch"  TextWrapping="Wrap"
                  VerticalAlignment="Stretch" Height="Auto" Width="Auto" Margin="0,20,0,0"
-                 AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                 AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                     Text="{Binding Path=NoteContent}"/>
         </Grid>
 
         <Grid Grid.Row="3">
