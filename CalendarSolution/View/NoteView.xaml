@@ -20,7 +20,8 @@
         
         
         <StackPanel Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" >
-            
+            <Button Height="30" Width="75" Command="{Binding Path=CancelButtonCommand}" Content="Anuluj" FontSize="10pt"></Button>
+            <Button Height="30" Width="75" Command="{Binding Path=OKButtonCommand}" Content="OK" FontSize="10pt"></Button>
         </StackPanel>
     </Grid>
 </Window>
