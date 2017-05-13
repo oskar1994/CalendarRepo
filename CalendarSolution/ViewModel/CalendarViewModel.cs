@@ -96,8 +96,17 @@ namespace CalendarSolution.ViewModel
         {
             get
             {
-                CancelButtonCommand = new RelayCommand<object>((x) => OKButton());
-                return OKButtonCommand;
+                CancelButtonCommand = new RelayCommand<object>((x) => CancelButton());
+                return CancelButtonCommand;
+            }
+        }
+
+        public ICommand AddNoteButtonCommand
+        {
+            get
+            {
+                AddNoteButtonCommand = new RelayCommand<object>((x) => AddNoteButton());
+                return AddNoteButtonCommand;
             }
         }
         #endregion
