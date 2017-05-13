@@ -22,6 +22,9 @@ namespace CalendarSolution.ViewModel
 
         #region Fields
         private ICommand nextButtonCommand;
+        private ICommand cancelButtonCommand;
+        private ICommand okButtonCommand;
+        private ICommand addNoteButtonCommand;
         public event PropertyChangedEventHandler PropertyChanged;
         private DateTime _date;
         #endregion
@@ -52,12 +55,17 @@ namespace CalendarSolution.ViewModel
             Date = Date.AddDays(-1);
         }
 
-        private void OKButton()
+        private void OkButton()
         {
             throw new NotImplementedException();
         }
 
         private void CancelButton()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddNoteButton()
         {
             throw new NotImplementedException();
         }
@@ -83,12 +91,12 @@ namespace CalendarSolution.ViewModel
             }
         }
 
-        public ICommand OKButtonCommand
+        public ICommand OkButtonCommand
         {
             get
             {
-                OKButtonCommand = new RelayCommand<object>((x) => OKButton());
-                return OKButtonCommand;
+                okButtonCommand = new RelayCommand<object>((x) => OkButton());
+                return okButtonCommand;
             }
         }
 
@@ -96,8 +104,8 @@ namespace CalendarSolution.ViewModel
         {
             get
             {
-                CancelButtonCommand = new RelayCommand<object>((x) => CancelButton());
-                return CancelButtonCommand;
+                cancelButtonCommand = new RelayCommand<object>((x) => CancelButton());
+                return cancelButtonCommand;
             }
         }
 
@@ -105,10 +113,11 @@ namespace CalendarSolution.ViewModel
         {
             get
             {
-                AddNoteButtonCommand = new RelayCommand<object>((x) => AddNoteButton());
-                return AddNoteButtonCommand;
+                addNoteButtonCommand = new RelayCommand<object>((x) => AddNoteButton());
+                return addNoteButtonCommand;
             }
         }
+
         #endregion
 
     }
