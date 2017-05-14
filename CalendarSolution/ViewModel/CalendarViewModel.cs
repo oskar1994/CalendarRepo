@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace CalendarSolution.ViewModel 
@@ -27,6 +28,7 @@ namespace CalendarSolution.ViewModel
         private ICommand cancelButtonCommand;
         private ICommand okButtonCommand;
         private ICommand addNoteButtonCommand;
+        private ICommand closeApplicationbuttonCommand;
         public event PropertyChangedEventHandler PropertyChanged;
         private DateTime _date;
         #endregion
@@ -71,6 +73,11 @@ namespace CalendarSolution.ViewModel
         {
             NoteView noteView = new NoteView();
             noteView.Show();
+        }
+
+        private void CloseApplicationbutton()
+        {
+            Application.Current.Shutdown();
         }
 
         protected void OnPropertyChanged(string Label)
@@ -128,6 +135,17 @@ namespace CalendarSolution.ViewModel
                 return addNoteButtonCommand;
             }
         }
+
+        public ICommand CloseApplicationbuttonCommand
+        {
+            get
+            {
+                closeApplicationbuttonCommand = new RelayCommand<object>((x) => CloseApplicationbutton());
+                return closeApplicationbuttonCommand;
+            }
+        }
+
+
 
         #endregion
 
