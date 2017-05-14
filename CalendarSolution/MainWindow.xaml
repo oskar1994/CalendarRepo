@@ -12,6 +12,12 @@
         <vm:CalendarViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFF4FCFF" Offset="0.229"/>
+                <GradientStop Color="#FFDBE0FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100pt"/>
             <ColumnDefinition Width="2*"/>
