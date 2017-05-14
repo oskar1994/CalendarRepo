@@ -8,5 +8,9 @@ namespace CalendarSolution.ViewModel
 {
     public class NoteViewModel
     {
+        private void CancelButton()
+        {
+
+        }
     }
 }
