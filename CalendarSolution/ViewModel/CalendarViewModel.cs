@@ -22,6 +22,7 @@ namespace CalendarSolution.ViewModel
 
         #region Fields
         private ICommand nextButtonCommand;
+        private ICommand previousButtonCommand;
         private ICommand cancelButtonCommand;
         private ICommand okButtonCommand;
         private ICommand addNoteButtonCommand;
@@ -88,6 +89,14 @@ namespace CalendarSolution.ViewModel
             {
             nextButtonCommand = new RelayCommand<object>((x) => NextButton());
             return nextButtonCommand;
+            }
+        }
+        public ICommand PreviousButtonCommand
+        {
+            get
+            {
+                previousButtonCommand = new RelayCommand<object>((x) => NextButton());
+                return previousButtonCommand;
             }
         }
 

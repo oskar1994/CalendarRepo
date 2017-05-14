@@ -74,6 +74,7 @@
     <Compile Include="SQLData\SQLDataContext.cs" />
     <Compile Include="ViewModel\CalendarViewModel.cs" />
     <Compile Include="ViewModel\NoteViewModel.cs" />
+    <Compile Include="ViewModel\ObservableObject.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\NoteView.xaml.cs">
       <DependentUpon>NoteView.xaml</DependentUpon>
