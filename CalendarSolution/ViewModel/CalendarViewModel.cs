@@ -95,7 +95,7 @@ namespace CalendarSolution.ViewModel
         {
             get
             {
-                previousButtonCommand = new RelayCommand<object>((x) => NextButton());
+                previousButtonCommand = new RelayCommand<object>((x) => PreviousButton());
                 return previousButtonCommand;
             }
         }
