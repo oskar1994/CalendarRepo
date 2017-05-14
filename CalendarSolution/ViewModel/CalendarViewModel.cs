@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalendarSolution.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -68,7 +69,8 @@ namespace CalendarSolution.ViewModel
 
         private void AddNoteButton()
         {
-            throw new NotImplementedException();
+            NoteView noteView = new NoteView();
+            noteView.Show();
         }
 
         protected void OnPropertyChanged(string Label)
