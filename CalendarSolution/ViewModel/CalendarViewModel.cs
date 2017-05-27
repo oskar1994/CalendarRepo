@@ -25,8 +25,6 @@ namespace CalendarSolution.ViewModel
         #region Fields
         private ICommand nextButtonCommand;
         private ICommand previousButtonCommand;
-        private ICommand cancelButtonCommand;
-        private ICommand okButtonCommand;
         private ICommand addNoteButtonCommand;
         private ICommand closeApplicationbuttonCommand;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -57,16 +55,6 @@ namespace CalendarSolution.ViewModel
         private void PreviousButton()
         {
             Date = Date.AddDays(-1);
-        }
-
-        private void OkButton()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void CancelButton()
-        {
-            throw new NotImplementedException();
         }
 
         private void AddNoteButton()
@@ -106,24 +94,6 @@ namespace CalendarSolution.ViewModel
             {
                 previousButtonCommand = new RelayCommand<object>((x) => PreviousButton());
                 return previousButtonCommand;
-            }
-        }
-
-        public ICommand OkButtonCommand
-        {
-            get
-            {
-                okButtonCommand = new RelayCommand<object>((x) => OkButton());
-                return okButtonCommand;
-            }
-        }
-
-        public ICommand CancelButtonCommand
-        {
-            get
-            {
-                cancelButtonCommand = new RelayCommand<object>((x) => CancelButton());
-                return cancelButtonCommand;
             }
         }
 
