@@ -7,8 +7,9 @@ using System.Windows.Input;
 
 namespace CalendarSolution.ViewModel
 {
-    public class NoteViewModel
+    public class NoteViewModel : ObservableObject
     {
+
         private ICommand cancelButtonCommand;
         private ICommand okButtonCommand;
 

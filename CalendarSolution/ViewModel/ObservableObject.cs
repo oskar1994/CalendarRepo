@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CalendarSolution.ViewModel
 {
-    class ObservableObject : CalendarViewModel, INotifyPropertyChanged
+    public class ObservableObject :  INotifyPropertyChanged
     {
         #region Fields
         public event PropertyChangedEventHandler PropertyChanged;
