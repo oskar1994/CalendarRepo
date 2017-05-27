@@ -17,12 +17,25 @@ namespace CalendarSolution.ViewModel
         private ICommand cancelButtonCommand;
         private ICommand okButtonCommand;
 
+        private string noteContent;
+        public string NoteContent
+        {
+            get { return noteContent; }
+            set
+            {
+                noteContent = value;
+                OnPropertyChanged(nameof(NoteContent));
+            }
+        }
+
+
         private string noteName;
-            
         public string NoteName
         {
             get { return noteName; }
-            set { noteName = value;
+            set
+            {
+                noteName = value;
                 OnPropertyChanged(nameof(NoteName));
             }
         }
