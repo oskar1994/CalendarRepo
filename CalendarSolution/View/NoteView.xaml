@@ -25,7 +25,7 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <DatePicker />
+            <DatePicker SelectedDate="{Binding NoteDate}" />
         </Grid>
         
         <Grid Grid.Row="2">
