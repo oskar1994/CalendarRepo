@@ -9,9 +9,24 @@ namespace CalendarSolution.ViewModel
 {
     public class NoteViewModel : ObservableObject
     {
+        public NoteViewModel()
+        {
+        }
+
 
         private ICommand cancelButtonCommand;
         private ICommand okButtonCommand;
+
+        private string noteName;
+            
+        public string NoteName
+        {
+            get { return noteName; }
+            set { noteName = value;
+                OnPropertyChanged(nameof(NoteName));
+            }
+        }
+
 
         private void OkButton()
         {
