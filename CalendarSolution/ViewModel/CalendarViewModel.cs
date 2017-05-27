@@ -29,6 +29,8 @@ namespace CalendarSolution.ViewModel
         private ICommand closeApplicationbuttonCommand;
         public event PropertyChangedEventHandler PropertyChanged;
         private DateTime _date;
+        NoteViewModel NoteVM { get; set; }
+        NoteView NoteV { get; set; }
         #endregion
 
         #region Properties
@@ -59,8 +61,27 @@ namespace CalendarSolution.ViewModel
 
         private void AddNoteButton()
         {
-            NoteView noteView = new NoteView();
-            noteView.Show();    
+            NoteV = new NoteView();
+            NoteVM = new NoteViewModel();
+            NoteV.DataContext = NoteVM;
+            NoteVM.NoteClosed += OnNoteClosed;
+            NoteV.Show();
+
+           
+        }
+
+        public void OnNoteClosed(object source, NoteEventArgs args)
+        {
+            switch (args.IsClosed)
+            {
+                case true:
+                    {
+                        NoteV.Close();
+                    }
+                    break;
+                case false:                   
+                    break;
+            }
         }
 
         private void CloseApplicationbutton()

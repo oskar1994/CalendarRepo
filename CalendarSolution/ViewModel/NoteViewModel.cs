@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace CalendarSolution.ViewModel
@@ -11,9 +12,10 @@ namespace CalendarSolution.ViewModel
     {
         public NoteViewModel()
         {
+            NoteDate = DateTime.Now;
         }
 
-
+        public event EventHandler<NoteEventArgs> NoteClosed;
 
         private ICommand cancelButtonCommand;
         private ICommand okButtonCommand;
@@ -57,7 +59,37 @@ namespace CalendarSolution.ViewModel
 
         private void OkButton()
         {
-            throw new NotImplementedException();
+            if (NoteName != null && NoteContent != null)
+            {
+                try
+                {
+                    var note = new Model.Note()
+                    {
+                        Content = NoteName + "$" + noteContent,
+                        Date = NoteDate
+                    };
+                    Controllers.NoteController.AddToNote(note);
+                    OnNoteClosed(true);
+                }
+                catch (Exception exc)
+                {
+                }
+            }
+            else
+            {
+                OnNoteClosed(false);
+            }
+
+        
+            
+        }
+
+        protected virtual void  OnNoteClosed(bool v)
+        {
+            if (NoteClosed != null)
+            {
+                NoteClosed(this, new NoteEventArgs() { IsClosed = v });
+            }
         }
 
         private void CancelButton()
@@ -65,7 +97,7 @@ namespace CalendarSolution.ViewModel
             throw new NotImplementedException();
         }
 
-        public ICommand OkButtonCommand
+        public ICommand OKButtonCommand
         {
             get
             {

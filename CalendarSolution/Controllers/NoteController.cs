@@ -11,11 +11,13 @@ namespace CalendarSolution.Controllers
         public static void AddToNote(Model.Note Note)
         {
             var allNotes = SQLData.SQLDataContext.Notes;
-            foreach(var note in allNotes)
+            Random rnd = new Random();          
+            Note.Id = rnd.Next(30000);
+            foreach (var note in allNotes)
             {
                 if (note.Id.Equals(Note.Id))
                 {
-                    throw new Exception("Note with that Id already exists.");
+                    Note.Id = rnd.Next(30000);
                 }
             }
             SQLData.SQLDataContext.Notes.InsertOnSubmit(Note);
