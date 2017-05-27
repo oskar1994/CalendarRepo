@@ -14,8 +14,22 @@ namespace CalendarSolution.ViewModel
         }
 
 
+
         private ICommand cancelButtonCommand;
         private ICommand okButtonCommand;
+
+        private DateTime noteDate;
+
+        public DateTime NoteDate
+        {
+            get { return noteDate; }
+            set
+            {
+                noteDate = value;
+                OnPropertyChanged(nameof(NoteDate));
+            }
+        }
+
 
         private string noteContent;
         public string NoteContent
