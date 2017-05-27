@@ -12,7 +12,7 @@ namespace CalendarSolution.ViewModel
     {
         public NoteViewModel()
         {
-            NoteDate = DateTime.Now;
+            NoteDate = DateTime.Now.Date;
         }
 
         public event EventHandler<NoteEventArgs> NoteClosed;
@@ -27,7 +27,7 @@ namespace CalendarSolution.ViewModel
             get { return noteDate; }
             set
             {
-                noteDate = value;
+                noteDate = value.Date;
                 OnPropertyChanged(nameof(NoteDate));
             }
         }

@@ -16,6 +16,7 @@ namespace CalendarSolution.ViewModel
         public CalendarViewModel()
         {
             Date = DateTime.Now;
+            DisplayNote();
            // Model.Note newNote = new Model.Note() { Id = 1, Date = DateTime.Now, Content = "lala" };
            //Controllers.NoteController.AddToNote(newNote);
            // var allNotes = SQLData.SQLDataContext.Notes.ToList();
@@ -29,6 +30,8 @@ namespace CalendarSolution.ViewModel
         private ICommand closeApplicationbuttonCommand;
         public event PropertyChangedEventHandler PropertyChanged;
         private DateTime _date;
+        private string noteName, noteContent;
+        
         NoteViewModel NoteVM { get; set; }
         NoteView NoteV { get; set; }
         #endregion
@@ -41,9 +44,27 @@ namespace CalendarSolution.ViewModel
             {
                 if (value != null && value != _date)
                 {
-                    _date = value;
+                    _date = value.Date;
                     OnPropertyChanged("Date");
                 }
+            }
+        }
+        public string NoteName
+        {
+            get { return noteName; }
+            set
+            {
+                noteName = value;
+                OnPropertyChanged(nameof(NoteName));
+            }
+        }
+        public string NoteContent
+        {
+            get { return noteContent; }
+            set
+            {
+                noteContent = value;
+                OnPropertyChanged(nameof(NoteContent));
             }
         }
         #endregion
@@ -52,11 +73,35 @@ namespace CalendarSolution.ViewModel
         private void NextButton()
         {
             Date = Date.AddDays(1);
+            DisplayNote();
         }
 
         private void PreviousButton()
         {
             Date = Date.AddDays(-1);
+            DisplayNote();
+        }
+
+        private void DisplayNote()
+        {
+            try
+            {
+                Model.Note Note = Controllers.NoteController.GetNote(Date);
+                if (Note != null)
+                {
+                    NoteName = Note.Content.Split('$')[0];
+                    NoteContent = Note.Content.Split('$')[1];
+                }
+                else if ( Note == null)
+                {
+                    NoteName = null;
+                    NoteContent = null;
+                }
+            }
+            catch(Exception exc)
+            {
+
+            }
         }
 
         private void AddNoteButton()
@@ -65,9 +110,7 @@ namespace CalendarSolution.ViewModel
             NoteVM = new NoteViewModel();
             NoteV.DataContext = NoteVM;
             NoteVM.NoteClosed += OnNoteClosed;
-            NoteV.Show();
-
-           
+            NoteV.Show();      
         }
 
         public void OnNoteClosed(object source, NoteEventArgs args)
