@@ -72,7 +72,7 @@ namespace CalendarSolution.ViewModel
         private void AddNoteButton()
         {
             NoteView noteView = new NoteView();
-            noteView.Show();
+            noteView.Show();    
         }
 
         private void CloseApplicationbutton()
