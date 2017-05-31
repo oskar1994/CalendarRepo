@@ -30,10 +30,10 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Date,StringFormat=d, ConverterCulture=en-GB }" FontSize="15pt"></TextBlock>
         <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Top">
-            <Button Height="50pt" Command="{Binding Path=NextButtonCommand}" Content="Nastepny Dzień" FontSize="10pt"></Button>
-            <Button Height="50pt" Command="{Binding Path=PreviousButtonCommand}" Content="Poprzedni Dzień" FontSize="10pt"></Button>
-            <Button Height="50pt" Command="{Binding Path=AddNoteButtonCommand}" Content="Dodaj notatkę" FontSize="10pt"></Button>
-            <Button Height="50pt" Command="{Binding Path=CloseApplicationbuttonCommand}" Content="Wyjdź" FontSize="10pt"></Button>
+            <Button Height="50pt" Command="{Binding Path=NextButtonCommand}" Content="Nastepny Dzień" FontSize="10pt" FontWeight="Bold"></Button>
+            <Button Height="50pt" Command="{Binding Path=PreviousButtonCommand}" Content="Poprzedni Dzień" FontSize="10pt" FontWeight="Bold"></Button>
+            <Button Height="50pt" Command="{Binding Path=AddNoteButtonCommand}" Content="Dodaj notatkę" FontSize="10pt" FontWeight="Bold"></Button>
+            <Button Height="50pt" Command="{Binding Path=CloseApplicationbuttonCommand}" Content="Wyjdź" FontSize="10pt" FontWeight="Bold"></Button>
         </StackPanel>
         <Calendar Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" SelectedDate="{Binding Path=Date}"  SelectionMode="SingleDate"/>
         <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">

@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:CalendarSolution"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="/CalendarStyleLibrary;component/Theme.xaml"/>
-        </ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CalendarStyleLibrary;component/Theme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
