@@ -145,6 +145,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CalendarStyleLibrary\CalendarStyleLibrary.csproj">
+      <Project>{67397bbe-d12a-4a0d-93d6-e9ad20bb4c3a}</Project>
+      <Name>CalendarStyleLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
