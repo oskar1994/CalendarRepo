@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Windows.Input;
 
 namespace CalendarSolution.ViewModel
 {
-    public class NoteViewModel : ObservableObject
+    public class NoteViewModel : ObservableObject , INotifyPropertyChanged
     {
         public NoteViewModel()
         {
@@ -79,9 +80,6 @@ namespace CalendarSolution.ViewModel
             {
                 OnNoteClosed(false);
             }
-
-        
-            
         }
 
         protected virtual void  OnNoteClosed(bool v)
